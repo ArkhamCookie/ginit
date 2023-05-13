@@ -10,7 +10,7 @@ process.on('exit', (code) => {
 	}
 })
 
-if (!existsSync(process.cwd() + '/.git')) {
+if (existsSync(process.cwd() + '/.git')) {
 	process.exit(1)
 }
 
