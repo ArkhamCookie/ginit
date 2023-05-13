@@ -1,15 +1,23 @@
 import { existsSync } from 'node:fs'
+import process from 'node:process'
 import chalk from 'chalk'
-import { ginitAnnouce } from './lib/annouce.js'
-import { gitPlatform } from './lib/gitCredentials.js'
+import { ginitannounce } from './lib/announce.js'
+// import { gitPlatform } from './lib/gitCredentials.js'
 
-if (existsSync(process.cwd() + '/.git')) {
-	console.warn(chalk.bold.red('Git repository already exists.'))
+process.on('exit', (code) => {
+	if (code === 1) {
+		console.warn(chalk.bold.red('Git repository already exists.'))
+	}
+})
+
+if (!existsSync(process.cwd() + '/.git')) {
 	process.exit(1)
 }
 
-ginitAnnouce()
+ginitannounce()
 
+/*
 const run = async() => {
 	const credentials = gitPlatform
 }
+*/
