@@ -1,9 +1,7 @@
 import boxen from 'boxen'
-import chalk from 'chalk'
 
 function boxStyle(text, boxenConfig) {
 	if (text === undefined) {
-		// console.error(chalk.red('boxStyle requires text'))
 		console.error(
 			boxen('boxStyle()\nrequires text', {
 				borderColor: 'redBright',
@@ -19,9 +17,6 @@ function boxStyle(text, boxenConfig) {
 	console.log(boxen(text, boxenConfig))
 }
 
-// boxStyle()
-// boxStyle('text', "{ borderStyle: 'singleDouble' }")
-
 function boxError(_err) {
 	console.error(
 		boxen(_err, {
@@ -34,4 +29,4 @@ function boxError(_err) {
 	)
 }
 
-boxError('testing')
+export { boxStyle, boxError }
