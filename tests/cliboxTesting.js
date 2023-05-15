@@ -1,22 +1,5 @@
 import boxen from 'boxen'
 
-function boxStyle(text, boxenConfig) {
-	if (text === undefined) {
-		console.error(
-			boxen('boxStyle()\nrequires text', {
-				borderColor: 'redBright',
-				borderStyle: 'bold',
-				title: 'ERROR',
-				titleAlignment: 'right',
-				padding: 0.5
-			})
-		)
-		process.exit(1)
-	}
-	console.log(text, boxenConfig)
-	console.log(boxen(text, boxenConfig))
-}
-
 function boxError(_err) {
 	console.error(
 		boxen(_err, {
@@ -27,6 +10,14 @@ function boxError(_err) {
 			padding: 0.5
 		})
 	)
+}
+
+function boxStyle(text, boxenConfig) {
+	if (text === undefined) {
+		boxError('boxStyle()\nrequires text')
+	}
+	console.log(text, boxenConfig)
+	console.log(boxen(text, boxenConfig))
 }
 
 export { boxStyle, boxError }
