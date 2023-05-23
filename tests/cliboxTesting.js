@@ -1,16 +1,5 @@
 import boxen from 'boxen'
-
-function boxError(_err) {
-	console.error(
-		boxen(_err, {
-			borderColor: 'redBright',
-			borderStyle: 'bold',
-			title: 'ERROR',
-			titleAlignment: 'right',
-			padding: 0.5
-		})
-	)
-}
+import { boxError } from '../lib/announce'
 
 function boxStyle(text, boxenConfig) {
 	if (text === undefined) {
@@ -20,4 +9,4 @@ function boxStyle(text, boxenConfig) {
 	console.log(boxen(text, boxenConfig))
 }
 
-export { boxStyle, boxError }
+export { boxStyle }
