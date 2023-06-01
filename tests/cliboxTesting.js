@@ -1,5 +1,5 @@
 import boxen from 'boxen'
-import { boxError } from '../lib/announce'
+import { boxError } from '../lib/announce.js'
 
 function boxStyle(text, boxenConfig) {
 	if (text === undefined) {
@@ -10,3 +10,5 @@ function boxStyle(text, boxenConfig) {
 }
 
 export { boxStyle }
+
+boxError('test')
