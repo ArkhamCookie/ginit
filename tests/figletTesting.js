@@ -8,7 +8,7 @@ function figletBasic(text) {
 			return
 		}
 		console.log(data)
-})
+	})
 }
 
 function figletPrintMetadata() {
@@ -24,14 +24,14 @@ function figletPrintMetadata() {
 }
 
 function figletPrintFonts() {
-figlet.fonts(function(err, fonts) {
-	if (err) {
-		console.log('Something went wrong, what did you do?')
-		console.dir(err)
-		return
-	}
-	console.log(fonts)
-})
+	figlet.fonts(function(err, fonts) {
+		if (err) {
+			console.log('Something went wrong, what did you do?')
+			console.dir(err)
+			return
+		}
+		console.log(fonts)
+	})
 }
 
 export { figletBasic, figletPrintMetadata, figletPrintFonts }
