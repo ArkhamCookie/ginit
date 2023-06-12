@@ -5,13 +5,13 @@ import { ginitAnnounce } from './lib/announce.js'
 // import { gitPlatform } from './lib/gitCredentials.js'
 
 process.on('exit', (code) => {
-	if (code === 1) {
+	if (code === 10) {
 		console.warn(chalk.bold.red('Git repository already exists.'))
 	}
 })
 
 if (existsSync(process.cwd() + '/.git')) {
-	process.exit(1)
+	process.exit(10)
 }
 
 ginitAnnounce()
